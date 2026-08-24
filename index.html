@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redes 5G: Arquitectura y Aplicaciones - Producción Multimedial</title>
+    <!-- FontAwesome para Logos e Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts: Poppins (Títulos) y Roboto (Texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            color: #333333;
+        }
+
+        /* 1. ENCABEZADO (HEADER) */
+        header {
+            background-color: #ffffff;
+            border-bottom: 4px solid #0077cc;
+            padding: 25px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .brand-logo i {
+            font-size: 2.5rem;
+            color: #0077cc;
+        }
+
+        .brand-text h1 {
+            font-size: 1.6rem;
+            line-height: 1.2;
+        }
+
+        .brand-text p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .student-info {
+            background-color: #f5f5f5;
+            padding: 10px 18px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            font-size: 0.95rem;
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        main {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* ESTILO GENERAL DE SECCIONES */
+        section {
+            background-color: #ffffff;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e2e8f0;
+        }
+
+        section h2 {
+            font-size: 1.7rem;
+            color: #0077cc;
+            border-bottom: 2px solid #f5f5f5;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        /* 2. SECCIÓN DE PRESENTACIÓN */
+        .hero-banner {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+            box-shadow: 0 8px 20px rgba(0, 119, 204, 0.2);
+        }
+
+        figcaption {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* 4. DESARROLLO / CONTENIDO & CUADROS */
+        .grid-two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-two-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .info-card {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #0077cc;
+        }
+
+        .info-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* TABLA COMPARATIVA */
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .custom-table th, .custom-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #e0e0e0;
+        }
+
+        .custom-table th {
+            background-color: #0077cc;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .custom-table tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+
+        /* IMÁGENES SECUNDARIAS */
+        .section-image {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 15px 0 5px 0;
+        }
+
+        /* 6. PIE DE PÁGINA (FOOTER) */
+        footer {
+            background-color: #ffffff;
+            border-top: 2px solid #e0e0e0;
+            padding: 25px 20px;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #333333;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. ENCABEZADO (HEADER) -->
+    <header>
+        <div class="header-content">
+            <div class="brand-logo">
+                <i class="fa-solid fa-tower-cell"></i>
+                <div class="brand-text">
+                    <h1>Redes Móviles 5G</h1>
+                    <p>Producción Multimedial - COM22</p>
+                </div>
+            </div>
+            <div class="student-info">
+                <strong>Estudiante:</strong> Camilo Andrés Vargas González <br>
+                <strong>Institución:</strong> Universitaria de Barranquilla
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- 2. SECCIÓN DE PRESENTACIÓN -->
+        <section id="presentacion">
+            <figure>
+                <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1200&q=80" alt="Ciudad Inteligente e Innovación Tecnológica 5G" class="hero-banner">
+                <figcaption>Figura 1: Innovación 5G mediante infraestructura de ciudad inteligente interconectada en tiempo real.</figcaption>
+            </figure>
+        </section>
+
+        <!-- 3. INTRODUCCIÓN -->
+        <section id="introduccion">
+            <h2><i class="fa-solid fa-circle-info"></i> Introducción</h2>
+            <p>La quinta generación de tecnologías de telefonía móvil (5G) representa una evolución trascendental respecto a las infraestructuras de comunicaciones precedentes. No se trata únicamente de un incremento en las velocidades de transferencia de datos para dispositivos inteligentes, sino de la creación de una plataforma global unificada diseñada para conectar prácticamente todo tipo de máquinas, objetos y sensores en tiempo real.</p>
+            
+            <p><strong>¿Por qué es importante?</strong> La implementación del 5G es clave para el desarrollo socioeconómico de la era moderna. Su arquitectura proporciona el soporte técnico esencial para canalizar volúmenes de datos masivos con latencias imperceptibles. Esto posibilita la digitalización profunda de industrias críticas, optimiza los procesos logísticos urbanos y abre las puertas a modelos de negocio avanzados que antes resultaban inviables técnicamente bajo las redes 4G LTE.</p>
+        </section>
+
+        <!-- 4. DESARROLLO / CONTENIDO -->
+        <section id="desarrollo">
+            <h2><i class="fa-solid fa-network-wired"></i> Desarrollo y Contenido Técnico</h2>
+            
+            <p>Para comprender la magnitud de las redes 5G, es esencial desglosar su arquitectura, sus componentes fundamentales y los parámetros de rendimiento que la diferencian radicalmente de sus antecesoras.</p>
+
+            <h3>Conceptos Clave de la Arquitectura 5G</h3>
+            <p>La infraestructura 5G se fundamenta en la separación explícita entre las funciones del plano de control y el plano de usuario, permitiendo una virtualización flexible de la red a través de software especializado.</p>
+
+            <div class="grid-two-columns">
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-microchip"></i> Componentes del Sistema</h3>
+                    <ul>
+                        <li><strong>NG-RAN (Next Generation RAN):</strong> Compuesta por estaciones base (gNodeB) diseñadas para transmitir datos en altas frecuencias mediante antenas MIMO Masivas.</li>
+                        <li><strong>5G Core (5GC):</strong> Basado en una Arquitectura Orientada a Servicios (SBA) totalmente virtualizada dentro de la nube.</li>
+                        <li><strong>User Equipment (UE):</strong> Dispositivos finales dotados de módem capaz de procesar ondas milimétricas.</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3><i class="fa-solid fa-layer-group"></i> Herramientas y Tecnologías</h3>
+                    <ul>
+                        <li><strong>Network Slicing:</strong> Capacidad de fraccionar una red física única en múltiples redes virtuales independientes y adaptadas a necesidades específicas.</li>
+                        <li><strong>Edge Computing (MEC):</strong> Procesamiento de datos descentralizado cerca del usuario final para minimizar demoras.</li>
+                        <li><strong>Beamforming:</strong> Técnica de señalización espacial que dirige las ondas de radio directamente hacia el usuario en movimiento.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <figure style="margin-top: 25px;">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80" alt="Tecnología y Trabajo Digital Interconectado" class="section-image">
+                <figcaption>Figura 2: Trabajo colaborativo apoyado en herramientas de tecnología e innovación 5G.</figcaption>
+            </figure>
+
+            <h3 style="margin-top: 30px;">Ventajas y Desventajas del 5G</h3>
+            <div class="grid-two-columns">
+                <div>
+                    <h4><i class="fa-solid fa-thumbs-up" style="color: #0077cc;"></i> Ventajas Principales</h4>
+                    <ul>
+                        <li>Velocidad teórica máxima de descarga de hasta 20 Gbps.</li>
+                        <li>Latencias extremas tan bajas como 1 a 4 milisegundos.</li>
+                        <li>Capacidad de albergar hasta 1,000,000 de dispositivos por km².</li>
+                        <li>Reducción significativa del consumo energético por bit transmitido.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4><i class="fa-solid fa-thumbs-down" style="color: #e53e3e;"></i> Desventajas y Desafíos</h4>
+                    <ul>
+                        <li>Menor alcance de cobertura por antena en bandas milimétricas.</li>
+                        <li>Elevados costos iniciales de despliegue de infraestructura física.</li>
+                        <li>Necesidad de migración hacia dispositivos compatibles de última generación.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. EJEMPLOS O CASOS PRÁCTICOS -->
+        <section id="ejemplos">
+            <h2><i class="fa-solid fa-laptop-code"></i> Ejemplos y Casos Prácticos</h2>
+            <p>El impacto operativo del 5G se manifiesta en escenarios de uso diferenciados clasificados por la Unión Internacional de Telecomunicaciones (UIT):</p>
+
+            <ul>
+                <li><strong>eMBB (Enhanced Mobile Broadband):</strong> Transmisión ultra fluida de eventos masivos en directo, realidad virtual (VR) y transmisiones de alta resolución en video 8K sin almacenamiento previo en búfer.</li>
+                <li><strong>URLLC (Ultra-Reliable Low-Latency Communication):</strong> Telemedicina de precisión donde especialistas realizan procedimientos robóticos en tiempo real y gestión operativa de vehículos autónomos V2X.</li>
+                <li><strong>mMTC (Massive Machine Type Communications):</strong> Monitoreo constante de miles de sensores agrícolas, medidores de servicios públicos y sistemas de semaforización en ciudades inteligentes.</li>
+            </ul>
+
+            <h3>Comparación de Parámetros Funcionales</h3>
+            <p>A continuación se evalúa el salto generacional entre la infraestructura 4G LTE previa y el estándar 5G implementado globalmente:</p>
+
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Parámetro Técnico</th>
+                        <th>Red 4G LTE</th>
+                        <th>Red 5G (Estándar NR)</th>
+                        <th>Impacto Operativo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Velocidad Pico</td>
+                        <td>1 Gbps</td>
+                        <td>20 Gbps</td>
+                        <td>Aumento de 20 veces la tasa de transferencia.</td>
+                    </tr>
+                    <tr>
+                        <td>Latencia de Red</td>
+                        <td>30 - 50 ms</td>
+                        <td>1 - 4 ms</td>
+                        <td>Respuesta casi instantánea en telecontrol.</td>
+                    </tr>
+                    <tr>
+                        <td>Densidad de Conexión</td>
+                        <td>100,000 disp./km²</td>
+                        <td>1,000,000 disp./km²</td>
+                        <td>Soporte masivo para plataformas IoT.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 6. CONCLUSIONES -->
+        <section id="conclusiones">
+            <h2><i class="fa-solid fa-award"></i> Conclusiones</h2>
+            <p>En conclusión, las redes de quinta generación (5G) trascienden la simple aceleración de la conectividad móvil individual, erigiéndose como la columna vertebral de la Cuarta Revolución Industrial. Su flexibilidad arquitectónica, soportada por el software y el procesamiento en la nube, garantiza que industrias clave como la manufactura, la salud y el transporte urbano operen de manera automatizada, segura e interconectada.</p>
+            <p>La adopción estratégica de este estándar tecnológico por parte de las organizaciones y profesionales de las telecomunicaciones resulta imprescindible en la industria actual para mantener la competitividad, impulsar la innovación constante y posibilitar la llegada de ecosistemas autónomos en los años venideros.</p>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA (FOOTER) - LEYENDA OBLIGATORIA DE LA INSTITUCIÓN -->
+    <footer>
+        <p>Derechos reservados &copy; Camilo Andrés Vargas González - 2026</p>
+    </footer>
+
+</body>
+</html>
